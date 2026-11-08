@@ -1,0 +1,85 @@
+"
+import random
+
+a = []
+for i in range(10):
+    a.append(random.randint(-10, 10))
+print("Список:", a)
+
+sum_neg = 0
+sum_even = 0
+sum_odd = 0
+prod_3 = 1
+min_i = 0
+max_i = 0
+first_pos = -1
+last_pos = -1
+
+for i in range(len(a)):
+    if a[i] < 0:
+        sum_neg = sum_neg + a[i]
+    if a[i] % 2 == 0:
+        sum_even = sum_even + a[i]
+    else:
+        sum_odd = sum_odd + a[i]
+    if i % 3 == 0:
+        prod_3 = prod_3 * a[i]
+    if a[i] < a[min_i]:
+        min_i = i
+    if a[i] > a[max_i]:
+        max_i = i
+    if a[i] > 0:
+        if first_pos == -1:
+            first_pos = i
+        last_pos = i
+
+print("Сумма отрицательных:", sum_neg)
+print("Сумма четных:", sum_even)
+print("Сумма нечетных:", sum_odd)
+print("Произведение с индексами кратными 3:", prod_3)
+
+start = min_i
+end = max_i
+if min_i > max_i:
+    start = max_i
+    end = min_i
+
+prod_between = 1
+for i in range(start + 1, end):
+    prod_between = prod_between * a[i]
+print("Произведение между мин и макс:", prod_between)
+
+sum_between_pos = 0
+if first_pos != -1 and last_pos != -1 and first_pos != last_pos:
+    for i in range(first_pos + 1, last_pos):
+        sum_between_pos = sum_between_pos + a[i]
+print("Сумма между первым и последним положительными:", sum_between_pos)
+"
+
+"
+import random
+
+a = []
+for i in range(10):
+    a.append(random.randint(-10, 10))
+print("Исходный список:", a)
+
+even_list = []
+odd_list = []
+neg_list = []
+pos_list = []
+
+for i in range(len(a)):
+    if a[i] % 2 == 0:
+        even_list.append(a[i])
+    else:
+        odd_list.append(a[i])
+    if a[i] < 0:
+        neg_list.append(a[i])
+    if a[i] > 0:
+        pos_list.append(a[i])
+
+print("Только четные:", even_list)
+print("Только нечетные:", odd_list)
+print("Только отрицательные:", neg_list)
+print("Только положительные:", pos_list)
