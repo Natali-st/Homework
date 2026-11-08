@@ -1,0 +1,68 @@
+"
+a = int(input("Введите первое число: "))
+b = int(input("Введите второе число: "))
+
+if a > b:
+    a, b = b, a
+
+sum_even = 0
+count_even = 0
+sum_odd = 0
+count_odd = 0
+sum_9 = 0
+count_9 = 0
+
+for i in range(a, b + 1):
+    if i % 2 == 0:
+        sum_even += i
+        count_even += 1
+    else:
+        sum_odd += i
+        count_odd += 1
+    if i % 9 == 0:
+        sum_9 += i
+        count_9 += 1
+
+print("Сумма четных:", sum_even)
+print("Среднее четных:", sum_even / count_even if count_even > 0 else 0)
+print("Сумма нечетных:", sum_odd)
+print("Среднее нечетных:", sum_odd / count_odd if count_odd > 0 else 0)
+print("Сумма кратных 9:", sum_9)
+print("Среднее кратных 9:", sum_9 / count_9 if count_9 > 0 else 0)
+"
+"
+a = int(input("Введите длину линии: "))
+b = input("Введите символ: ")
+
+for i in range(a):
+    print(b)
+"
+"
+while True:
+    a = int(input("Введите число: "))
+    if a == 7:
+        print("Good bye!")
+        break
+    elif a > 0:
+        print("Number is positive")
+    elif a < 0:
+        print("Number is negative")
+    else:
+        print("Number is equal to zero")
+"
+"
+a = []
+while True:
+    b = int(input("Введите число: "))
+    if b == 7:
+        print("Good bye!")
+        break
+    a.append(b)
+
+if len(a) > 0:
+    print("Сумма:", sum(a))
+    print("Максимум:", max(a))
+    print("Минимум:", min(a))
+else:
+    print("Числа не введены")
+"
