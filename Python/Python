@@ -1,0 +1,36 @@
+text = input("Введите строку: ")
+clean_text = text.lower().replace(" ", "").replace(",", "").replace(".", "").replace("!", "").replace("?", "").replace("-", "")
+
+if clean_text == clean_text[::-1]:
+    print("Это палиндром")
+else:
+    print("Это не палиндром")
+"""
+
+"""
+text = input("Введите текст: ")
+reserved_words_input = input("Введите зарезервированные слова через пробел: ")
+
+reserved_words = reserved_words_input.split()
+words = text.split()
+
+for i in range(len(words)):
+    clean_word = words[i].strip(".,!?;:")
+    if clean_word in reserved_words:
+        words[i] = words[i].upper()
+
+result_text = " ".join(words)
+print(result_text)
+"""
+
+"""
+text = input("Введите текст: ")
+
+count = 0
+
+for char in text:
+    if char in ".!?":
+        count += 1
+
+print(f"Количество предложений: {count}")
+"""
