@@ -1,1 +1,49 @@
+try:
+    user_input = int(input("Введите целое число: "))
+    print(user_input ** 2)
+except ValueError:
+    print("Введите целое число")
+"""
 
+
+"""
+try:
+    num1 = int(input("Введите первое целое число: "))
+    num2 = int(input("Введите второе целое число: "))
+    
+    result = num1 / num2
+    print(result)
+
+except ValueError:
+    print("Нужно ввести два целых числа")
+except ZeroDivisionError:
+    print("На ноль делить нельзя")
+"""
+
+
+"""
+days_of_week = [
+    "Понедельник", 
+    "Вторник", 
+    "Среда", 
+    "Четверг", 
+    "Пятница", 
+    "Суббота", 
+    "Воскресенье"
+]
+
+try:
+    day_num = int(input("Введите номер дня (от 1 до 7): "))
+    
+    if day_num < 1 or day_num > 7:
+        raise IndexError
+        
+    print(days_of_week[day_num - 1])
+
+except ValueError:
+    print("Введите номер дня")
+except IndexError:
+    print("Нет такого дня")
+finally:
+    print("Проверка завершена")
+"""
